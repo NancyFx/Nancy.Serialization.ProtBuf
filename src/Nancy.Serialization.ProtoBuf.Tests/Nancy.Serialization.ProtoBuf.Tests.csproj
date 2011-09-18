@@ -31,7 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="protobuf-net">
+    <Reference Include="protobuf-net, Version=2.0.0.431, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\dependencies\protobuf-net\protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -69,7 +70,7 @@
       <Project>{EC48D179-F096-4DDB-972C-4B7B1170327C}</Project>
       <Name>Nancy.Serialization.ProtoBuf.Demo</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Nancy.Serialization.ProtoBuf\Nancy.Serialization.ProtoBuf\Nancy.Serialization.ProtoBuf.csproj">
+    <ProjectReference Include="..\Nancy.Serialization.ProtoBuf\Nancy.Serialization.ProtoBuf.csproj">
       <Project>{C183E341-605B-41FD-AB2C-3BE195A15FEA}</Project>
       <Name>Nancy.Serialization.ProtoBuf</Name>
     </ProjectReference>
