@@ -33,9 +33,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Nancy.Hosting.Aspnet">
-      <HintPath>..\packages\Nancy.Hosting.Aspnet.0.7.1\lib\net40\Nancy.Hosting.Aspnet.dll</HintPath>
-    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -68,6 +65,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\dependencies\Nancy\src\Nancy.Hosting.Aspnet\Nancy.Hosting.Aspnet.csproj">
+      <Project>{15B7F794-0BB2-4B66-AD78-4A951F1209B2}</Project>
+      <Name>Nancy.Hosting.Aspnet</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\dependencies\Nancy\src\Nancy\Nancy.csproj">
       <Project>{34576216-0DCA-4B0F-A0DC-9075E75A676F}</Project>
       <Name>Nancy</Name>
@@ -76,9 +77,6 @@
       <Project>{C183E341-605B-41FD-AB2C-3BE195A15FEA}</Project>
       <Name>Nancy.Serialization.ProtoBuf</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
