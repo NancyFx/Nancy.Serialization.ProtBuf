@@ -7,7 +7,7 @@ require 'rexml/document'
 NANCY_VERSION = "0.8.0"
 OUTPUT = "build"
 CONFIGURATION = 'Release'
-SHARED_ASSEMBLY_INFO = 'src/SharedAssemblyInfo.cs'
+SHARED_ASSEMBLY_INFO = 'dependencies/Nancy/src/SharedAssemblyInfo.cs'
 SOLUTION_FILE = 'src/Nancy.Serialization.ProtoBuf.sln'
 
 Albacore.configure do |config|
