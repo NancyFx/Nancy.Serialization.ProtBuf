@@ -12,15 +12,15 @@
   	<iconUrl>http://nancyfx.org/nancy-nuget.png</iconUrl>
     <licenseUrl>https://github.com/NancyFx/Nancy/blob/master/license.txt</licenseUrl>
     <projectUrl>http://nancyfx.org</projectUrl>
-	<dependencies>
+    <dependencies>
       <dependency id="Nancy" />
+      <dependency id="protobuf-net" version="2.0.0.480" />
     </dependencies> 
     <tags>Nancy ProtBuf ProtocolBuffers</tags>
   </metadata>
   <files>
     <file src="build\binaries\Nancy.Serialization.ProtoBuf.dll" target="lib\net40" />
     <file src="build\binaries\Nancy.Serialization.ProtoBuf.pdb" target="lib\net40" />
-    <file src="build\binaries\protobuf-net.dll" target="lib\net40" />
-    <file src="build\binaries\protobuf-net.pdb" target="lib\net40" />
+    <file src="src\Nancy.Serialization.ProtoBuf\**\*.cs" target="src" />
   </files>
 </package>
