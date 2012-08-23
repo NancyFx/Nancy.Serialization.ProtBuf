@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.Hosting.Aspnet", "..\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.Serialization.ProtoBuf", "Nancy.Serialization.ProtoBuf\Nancy.Serialization.ProtoBuf.csproj", "{C183E341-605B-41FD-AB2C-3BE195A15FEA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.Authentication.Forms", "..\dependencies\Nancy\src\Nancy.Authentication.Forms\Nancy.Authentication.Forms.csproj", "{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -171,6 +173,26 @@ Global
 		{C183E341-605B-41FD-AB2C-3BE195A15FEA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C183E341-605B-41FD-AB2C-3BE195A15FEA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C183E341-605B-41FD-AB2C-3BE195A15FEA}.Release|x86.ActiveCfg = Release|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.MonoDebug|Any CPU.ActiveCfg = MonoDebug|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.MonoDebug|Any CPU.Build.0 = MonoDebug|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.MonoDebug|Mixed Platforms.ActiveCfg = MonoDebug|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.MonoDebug|Mixed Platforms.Build.0 = MonoDebug|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.MonoDebug|x86.ActiveCfg = MonoDebug|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.MonoRelease|Any CPU.ActiveCfg = MonoRelease|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.MonoRelease|Any CPU.Build.0 = MonoRelease|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.MonoRelease|Mixed Platforms.ActiveCfg = MonoRelease|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.MonoRelease|Mixed Platforms.Build.0 = MonoRelease|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.MonoRelease|x86.ActiveCfg = MonoRelease|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E8B18958-7C8A-4FBA-AF00-3041C34A20CE}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
