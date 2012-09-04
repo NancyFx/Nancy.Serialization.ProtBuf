@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy", "..\dependencies\Nancy\src\Nancy\Nancy.csproj", "{34576216-0DCA-4B0F-A0DC-9075E75A676F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nancy.Serialization.ProtoBuf.Demo", "Nancy.Serialization.ProtoBuf.Demo\Nancy.Serialization.ProtoBuf.Demo.csproj", "{EC48D179-F096-4DDB-972C-4B7B1170327C}"
