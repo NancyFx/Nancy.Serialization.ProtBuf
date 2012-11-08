@@ -48,6 +48,7 @@
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="BodyDeserializers\ProtobufNetBodyDeserializer.cs" />
+    <Compile Include="ProtoBufProcessor.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="FormatterExtensions.cs" />
     <Compile Include="ProtoBufResponse.cs" />
