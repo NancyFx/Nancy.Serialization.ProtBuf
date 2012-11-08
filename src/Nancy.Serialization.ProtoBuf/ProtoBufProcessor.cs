@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using Nancy.Responses.Negotiation;
-
-namespace Nancy.Serialization.ProtoBuf
+﻿namespace Nancy.Serialization.ProtoBuf
 {
+    using System;
+    using System.Collections.Generic;
+    using Nancy.Responses.Negotiation;
+
     public class ProtoBufProcessor : IResponseProcessor
     {
         public ProcessorMatch CanProcess(MediaRange requestedMediaRange, dynamic model, NancyContext context)

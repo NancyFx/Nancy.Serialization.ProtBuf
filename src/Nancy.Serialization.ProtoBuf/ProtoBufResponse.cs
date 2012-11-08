@@ -1,7 +1,7 @@
-﻿using ProtoBuf;
-
-namespace Nancy.Serialization.ProtoBuf
+﻿namespace Nancy.Serialization.ProtoBuf
 {
+    using global::ProtoBuf;
+
     /// <summary>
     /// Represents a ProtoBuffer response.
     /// </summary>
