@@ -11,14 +11,14 @@ namespace Nancy.Serialization.ProtoBuf.Demo
                 x =>
                     {
                         User data = this.Bind();
-                        return new ProtoBufResponse(data);
+                        return Negotiate.WithModel(data);
                     };
 
             Get["/getProtoBuf/{name}/{age}"] =
                 parameters =>
                     {
                         var data = new User { Name = parameters.name, Age = parameters.age };
-                        return new ProtoBufResponse(data);
+                        return Negotiate.WithModel(data);
                     };
 
         }

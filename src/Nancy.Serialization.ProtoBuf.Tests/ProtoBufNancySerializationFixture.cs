@@ -19,7 +19,11 @@ namespace Nancy.Serialization.ProtoBuf.Tests
             var browser = new Browser(bootstrapper);
 
             var url = string.Format("/getProtoBuf/{0}/{1}", UserName, UserAge);
-            var response = browser.Get(url, with => with.HttpRequest());
+            var response = browser.Get(url, with =>
+            {
+                with.HttpRequest(); 
+                with.Accept(Constants.ProtoBufContentType);
+            });
 
             CheckResponse(response, UserName, UserAge);
         }
@@ -38,6 +42,7 @@ namespace Nancy.Serialization.ProtoBuf.Tests
                     with.HttpRequest();
                     with.FormValue("Name", UserName);
                     with.FormValue("Age", UserAge.ToString());
+                    with.Accept(Constants.ProtoBufContentType);
                 });
 
             CheckResponse(response, UserName, UserAge);
