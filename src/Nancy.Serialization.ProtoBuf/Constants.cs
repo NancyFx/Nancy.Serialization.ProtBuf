@@ -8,6 +8,6 @@
         /// <summary>
         /// The content type for ProtoBuffer
         /// </summary>
-        public static string ProtoBufContentType = "application/x-protobuf";
+        public const string ProtoBufContentType = "application/x-protobuf";
     }
 }
