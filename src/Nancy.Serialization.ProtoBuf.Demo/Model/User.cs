@@ -1,7 +1,7 @@
-﻿using System.Runtime.Serialization;
-
-namespace Nancy.Serialization.ProtoBuf.Demo.Model
+﻿namespace Nancy.Serialization.ProtoBuf.Demo.Model
 {
+    using System.Runtime.Serialization;
+    
     [DataContract]
     public class User
     {

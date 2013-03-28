@@ -15,36 +15,39 @@
         [Fact]
         public void TestGet()
         {
+            // Given
             var bootstrapper = new DefaultNancyBootstrapper();
             var browser = new Browser(bootstrapper);
-
             var url = string.Format("/getProtoBuf/{0}/{1}", UserName, UserAge);
+
+            // When
             var response = browser.Get(url, with =>
             {
                 with.HttpRequest(); 
                 with.Accept(Constants.ProtoBufContentType);
             });
 
+            // Then
             CheckResponse(response, UserName, UserAge);
         }
 
         [Fact]
         public void TestPost()
         {
+            // Given
             var bootstrapper = new DefaultNancyBootstrapper();
             var browser = new Browser(bootstrapper);
 
-            // get the serialized bytes to the service
-            var response = browser.Post(
-                "/postProtoBuf",
-                with =>
-                {
-                    with.HttpRequest();
-                    with.FormValue("Name", UserName);
-                    with.FormValue("Age", UserAge.ToString());
-                    with.Accept(Constants.ProtoBufContentType);
-                });
+            // When
+            var response = browser.Post("/postProtoBuf", with =>
+            {
+                with.HttpRequest();
+                with.FormValue("Name", UserName);
+                with.FormValue("Age", UserAge.ToString());
+                with.Accept(Constants.ProtoBufContentType);
+            });
 
+            // Then
             CheckResponse(response, UserName, UserAge);
         }
 

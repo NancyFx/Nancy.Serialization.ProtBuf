@@ -13,9 +13,9 @@
         /// <param name="body">Model instance to be serialized as the body.</param>
         public ProtoBufResponse(object body)
         {
-            Contents = stream => Serializer.Serialize(stream, body);
-            ContentType = Constants.ProtoBufContentType;
-            StatusCode = HttpStatusCode.OK;
+            this.Contents = stream => Serializer.Serialize(stream, body);
+            this.ContentType = Constants.ProtoBufContentType;
+            this.StatusCode = HttpStatusCode.OK;
         }
 
         /// <summary>
@@ -26,7 +26,7 @@
         /// <returns>The modified <see cref="ProtoBufResponse"/> instance</returns>
         public ProtoBufResponse WithStatusCode(HttpStatusCode httpStatusCode)
         {
-            StatusCode = httpStatusCode;
+            this.StatusCode = httpStatusCode;
             return this;
         }
     }
