@@ -1,16 +1,25 @@
 ﻿namespace Nancy.Serialization.ProtoBuf.Tests
 {
     using System.IO;
+    
     using Nancy.Serialization.ProtoBuf.Demo.Model;
     using Nancy.Testing;
     using Nancy.Tests;
+    
     using Xunit;
+    
     using ProtoBufSerializer = global::ProtoBuf.Serializer;
-
+    using global::ProtoBuf.Meta;
+    
     public class ProtoBufNancySerializationFixture
     {
         private const string UserName = "testUser";
         private const int UserAge = 29;
+
+        static ProtoBufNancySerializationFixture()
+        {
+            RuntimeTypeModel.Default.Add(typeof (User), false).Add("Name", "Age");
+        }
 
         [Fact]
         public void TestGet()
