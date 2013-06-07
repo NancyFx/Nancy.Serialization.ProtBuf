@@ -1,9 +1,11 @@
 ﻿namespace Nancy.Serialization.ProtoBuf.Tests
 {
     using System.IO;
+    
     using Nancy.Serialization.ProtoBuf.Demo.Model;
     using Nancy.Testing;
     using Nancy.Tests;
+    
     using Xunit;
     
     using ProtoBufSerializer = global::ProtoBuf.Serializer;
