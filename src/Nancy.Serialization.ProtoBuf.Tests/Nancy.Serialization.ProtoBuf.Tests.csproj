@@ -61,10 +61,6 @@
       <Project>{D79203C0-B672-4751-9C95-C3AB7D3FEFBE}</Project>
       <Name>Nancy.Testing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\dependencies\Nancy\src\Nancy.Tests\Nancy.Tests.csproj">
-      <Project>{776D244D-BC4D-4BBB-A478-CAF2D04520E1}</Project>
-      <Name>Nancy.Tests</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\dependencies\Nancy\src\Nancy\Nancy.csproj">
       <Project>{34576216-0DCA-4B0F-A0DC-9075E75A676F}</Project>
       <Name>Nancy</Name>

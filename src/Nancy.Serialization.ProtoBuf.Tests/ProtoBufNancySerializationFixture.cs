@@ -4,7 +4,6 @@
     
     using Nancy.Serialization.ProtoBuf.Demo.Model;
     using Nancy.Testing;
-    using Nancy.Tests;
     
     using Xunit;
     
@@ -62,9 +61,9 @@
 
         private static void CheckResponse(BrowserResponse response, string name, int age)
         {
-            response.StatusCode.ShouldEqual(HttpStatusCode.OK);
-            response.Context.Response.ContentType.ShouldEqual(Constants.ProtoBufContentType);
-            response.Context.Response.ShouldBeOfType(typeof(ProtoBufResponse));
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            Assert.Equal(Constants.ProtoBufContentType, response.Context.Response.ContentType);
+            Assert.IsType<ProtoBufResponse>(response.Context.Response);
             
             using (var memStream = new MemoryStream())
             {
@@ -74,9 +73,9 @@
                 memStream.Position = 0;
                 var returnedUser = ProtoBufSerializer.Deserialize<User>(memStream);
 
-                returnedUser.ShouldNotBeNull();
-                returnedUser.Name.ShouldEqual(name);
-                returnedUser.Age.ShouldEqual(age);
+                Assert.NotNull(returnedUser);
+                Assert.Equal(name, returnedUser.Name);
+                Assert.Equal(age, returnedUser.Age);
             }
         }
     }
