@@ -53,8 +53,26 @@ namespace Nancy.Serialization.ProtoBuf.BodyDeserializers
 
             var contentMimeType = contentType.Split(';').First();
 
-            return contentMimeType.Equals(
-                Constants.ProtoBufContentType, StringComparison.InvariantCultureIgnoreCase);
+		// We probably have something like application/x-protobuf OR
+		// application/vnd.whatever+x-protobuf
+
+		// accept them all!
+	        try
+	        {
+			// Are we just application/x-protobuf?
+		        if (contentMimeType.Equals(Constants.ProtoBufContentType, StringComparison.InvariantCultureIgnoreCase))
+			        return true;
+				
+			// Ok, get a little more creative and look for the specific vendor flavor:
+			string fSubType = contentMimeType.Split('/').Skip(1).First();
+
+			return (fSubType.StartsWith("vnd", StringComparison.InvariantCultureIgnoreCase) &&
+				fSubType.EndsWith("+x-protobuf", StringComparison.InvariantCultureIgnoreCase));
+	        }
+	        catch (Exception)
+	        {
+		        return false;
+	        }
         }
     }
 }

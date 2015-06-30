@@ -12,6 +12,7 @@
     {
         private const string UserName = "testUser";
         private const int UserAge = 29;
+		private const string VendorContentType = "application/vnd.company.product.v1+x-protobuf";
 
         static ProtoBufNancySerializationFixture()
         {
@@ -37,6 +38,26 @@
             CheckResponse(response, UserName, UserAge);
         }
 
+		[Fact]
+		public void TestGetWithVendorContentType()
+		{
+			// Given
+			var bootstrapper = new DefaultNancyBootstrapper();
+			var browser = new Browser(bootstrapper);
+			var url = string.Format("/getProtoBuf/{0}/{1}", UserName, UserAge);
+
+			// When
+			var response = browser.Get(url, with =>
+			{
+				with.HttpRequest();
+				
+				with.Accept(VendorContentType);
+			});
+
+			// Then
+			CheckResponse(response, UserName, UserAge);
+		}
+
         [Fact]
         public void TestPost()
         {
@@ -56,6 +77,26 @@
             // Then
             CheckResponse(response, UserName, UserAge);
         }
+
+		[Fact]
+		public void TestPostWithVendorContentType()
+		{
+			// Given
+			var bootstrapper = new DefaultNancyBootstrapper();
+			var browser = new Browser(bootstrapper);
+
+			// When
+			var response = browser.Post("/postProtoBuf", with =>
+			{
+				with.HttpRequest();
+				with.FormValue("Name", UserName);
+				with.FormValue("Age", UserAge.ToString());
+				with.Accept(VendorContentType);
+			});
+
+			// Then
+			CheckResponse(response, UserName, UserAge);
+		}
 
         private static void CheckResponse(BrowserResponse response, string name, int age)
         {

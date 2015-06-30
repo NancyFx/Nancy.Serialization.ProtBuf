@@ -30,7 +30,7 @@
         /// <returns>A <see cref="ProcessorMatch"/> result that determines the priority of the processor.</returns>
         public ProcessorMatch CanProcess(MediaRange requestedMediaRange, dynamic model, NancyContext context)
         {
-            if (IsWildcard(requestedMediaRange) || requestedMediaRange.Matches(Constants.ProtoBufContentType))
+            if (IsWildcardProtobufContentType(requestedMediaRange) || requestedMediaRange.Matches(Constants.ProtoBufContentType))
             {
                 return new ProcessorMatch
                 {
@@ -58,9 +58,20 @@
             return new ProtoBufResponse(model);
         }
         
-        private static bool IsWildcard(MediaRange requestedMediaRange)
+        private static bool IsWildcardProtobufContentType(MediaRange requestedContentType)
         {
-            return requestedMediaRange.Type.IsWildcard && requestedMediaRange.Subtype.IsWildcard;
+			if (!requestedContentType.Type.IsWildcard && !string.Equals("application", requestedContentType.Type, StringComparison.InvariantCultureIgnoreCase))
+			{
+				return false;
+			}
+			if (requestedContentType.Subtype.IsWildcard)
+			{
+				return true;
+			}
+			var subtypeString = requestedContentType.Subtype.ToString();
+
+			return (subtypeString.StartsWith("vnd", StringComparison.InvariantCultureIgnoreCase) &&
+			subtypeString.EndsWith("+x-protobuf", StringComparison.InvariantCultureIgnoreCase));
         }
     }
 }
