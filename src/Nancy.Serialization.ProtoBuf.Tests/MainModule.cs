@@ -1,5 +1,4 @@
-﻿
-namespace Nancy.Serialization.ProtoBuf.Tests
+﻿namespace Nancy.Serialization.ProtoBuf.Tests
 {
     using Nancy.ModelBinding;
 

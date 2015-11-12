@@ -2,7 +2,7 @@
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <id>Nancy.Serialization.ProtoBuf</id>
-    <version>0.6.0</version> <!-- Overridden by rake nuget task but a default is required in nuspec files -->
+    <version>0.0.0</version> <!-- Overridden by rake nuget task but a default is required in nuspec files -->
     <authors>Andreas Håkansson, Steven Robbins and contributors</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A protocol buffers (de)serializer for the Nancy web framework.</description>
@@ -15,12 +15,12 @@
     <dependencies>
       <dependency id="Nancy" />
       <dependency id="protobuf-net" version="2.0.0.614" />
-    </dependencies> 
+    </dependencies>
     <tags>Nancy ProtBuf ProtocolBuffers</tags>
   </metadata>
   <files>
-    <file src="build\binaries\Nancy.Serialization.ProtoBuf.dll" target="lib\net40" />
-    <file src="build\binaries\Nancy.Serialization.ProtoBuf.pdb" target="lib\net40" />
+    <file src="build\binaries\Nancy.Serialization.ProtoBuf.dll" target="lib\net45" />
+    <file src="build\binaries\Nancy.Serialization.ProtoBuf.pdb" target="lib\net45" />
     <file src="src\Nancy.Serialization.ProtoBuf\**\*.cs" target="src" />
   </files>
 </package>

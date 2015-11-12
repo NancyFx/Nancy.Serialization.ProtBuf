@@ -17,7 +17,7 @@
         {
             get
             {
-                return new[] { Tuple.Create("protobuf", MediaRange.FromString(Constants.ProtoBufContentType)) };
+                return new[] { Tuple.Create("protobuf", new MediaRange(Constants.ProtoBufContentType)) };
             }
         }
 
@@ -45,7 +45,7 @@
                 RequestedContentTypeResult = MatchResult.NoMatch
             };
         }
-        
+
         /// <summary>
         /// Process the response.
         /// </summary>
@@ -57,21 +57,23 @@
         {
             return new ProtoBufResponse(model);
         }
-        
+
         private static bool IsWildcardProtobufContentType(MediaRange requestedContentType)
         {
 			if (!requestedContentType.Type.IsWildcard && !string.Equals("application", requestedContentType.Type, StringComparison.InvariantCultureIgnoreCase))
 			{
 				return false;
 			}
+
 			if (requestedContentType.Subtype.IsWildcard)
 			{
 				return true;
 			}
+
 			var subtypeString = requestedContentType.Subtype.ToString();
 
-			return (subtypeString.StartsWith("vnd", StringComparison.InvariantCultureIgnoreCase) &&
-			subtypeString.EndsWith("+x-protobuf", StringComparison.InvariantCultureIgnoreCase));
+			return (subtypeString.StartsWith("vnd", StringComparison.InvariantCultureIgnoreCase)
+                && subtypeString.EndsWith("+x-protobuf", StringComparison.InvariantCultureIgnoreCase));
         }
     }
 }
