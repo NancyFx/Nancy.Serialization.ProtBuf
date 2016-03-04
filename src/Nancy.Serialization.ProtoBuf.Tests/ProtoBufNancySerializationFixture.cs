@@ -1,6 +1,7 @@
 ﻿namespace Nancy.Serialization.ProtoBuf.Tests
 {
     using System.IO;
+    using System.Threading.Tasks;
     using Nancy.Testing;
     using Xunit;
     using ProtoBufSerializer = global::ProtoBuf.Serializer;
@@ -18,7 +19,7 @@
         }
 
         [Fact]
-        public void TestGet()
+        public async Task TestGet()
         {
             // Given
             var bootstrapper = new DefaultNancyBootstrapper();
@@ -26,7 +27,7 @@
             var url = string.Format("/getProtoBuf/{0}/{1}", UserName, UserAge);
 
             // When
-            var response = browser.Get(url, with =>
+            var response = await browser.Get(url, with =>
             {
                 with.HttpRequest();
                 with.Accept(Constants.ProtoBufContentType);
@@ -37,7 +38,7 @@
         }
 
 		[Fact]
-		public void TestGetWithVendorContentType()
+		public async Task TestGetWithVendorContentType()
 		{
 			// Given
 			var bootstrapper = new DefaultNancyBootstrapper();
@@ -45,7 +46,7 @@
 			var url = string.Format("/getProtoBuf/{0}/{1}", UserName, UserAge);
 
 			// When
-			var response = browser.Get(url, with =>
+			var response = await browser.Get(url, with =>
 			{
 				with.HttpRequest();
 
@@ -57,14 +58,14 @@
 		}
 
         [Fact]
-        public void TestPost()
+        public async Task TestPost()
         {
             // Given
             var bootstrapper = new DefaultNancyBootstrapper();
             var browser = new Browser(bootstrapper);
 
             // When
-            var response = browser.Post("/postProtoBuf", with =>
+            var response = await browser.Post("/postProtoBuf", with =>
             {
                 with.HttpRequest();
                 with.FormValue("Name", UserName);
@@ -77,14 +78,14 @@
         }
 
 		[Fact]
-		public void TestPostWithVendorContentType()
+		public async Task TestPostWithVendorContentType()
 		{
 			// Given
 			var bootstrapper = new DefaultNancyBootstrapper();
 			var browser = new Browser(bootstrapper);
 
 			// When
-			var response = browser.Post("/postProtoBuf", with =>
+			var response = await browser.Post("/postProtoBuf", with =>
 			{
 				with.HttpRequest();
 				with.FormValue("Name", UserName);
