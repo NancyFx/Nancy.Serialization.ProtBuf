@@ -1,0 +1,16 @@
+{
+    "dependencies": {
+        "Nancy": { "target": "project" },
+        "Nancy.Serialization.ProtoBuf": { "target": "project" },
+        "Nancy.Testing": { "target": "project" },
+        "protobuf-net": "2.0.0.668",
+        "xunit": "2.1.0",
+        "xunit.runner.dnx": "2.1.0-*"
+    },
+    "commands": {
+        "test": "xunit.runner.dnx"
+    },
+    "frameworks": {
+        "dnx451": {}
+    }
+}
