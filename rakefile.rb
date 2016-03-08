@@ -17,12 +17,18 @@ Albacore.configure do |config|
 end
 
 desc "Compiles solution and runs unit tests"
-task :default => [:clean, :version, :compile, :xunit, :publish, :package]
+task :default => [:clean, :version, :nuget_restore, :compile, :xunit, :publish, :package]
 
 #Add the folders that should be cleaned as part of the clean task
 CLEAN.include(OUTPUT)
 CLEAN.include(FileList["src/**/#{CONFIGURATION}"])
 CLEAN.include(FileList["test/**/#{CONFIGURATION}"])
+
+desc "Restore NuGet packages"
+exec :nuget_restore do |cmd|
+   cmd.command = "dependencies/Nancy/tools/nuget/NuGet.exe"
+   cmd.parameters = ["restore #{SOLUTION_FILE}"]
+end
 
 desc "Update shared assemblyinfo file for the build"
 assemblyinfo :version => [:clean] do |asm|
