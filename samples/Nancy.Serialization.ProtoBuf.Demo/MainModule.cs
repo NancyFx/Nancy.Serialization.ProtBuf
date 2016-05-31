@@ -7,7 +7,7 @@
     {
         public MainModule()
         {
-            Post("/postProtoBuf", BuildManagerHostUnloadEventArgs =>
+            Post("/postProtoBuf", args =>
             {
                 User data = this.Bind();
                 return Negotiate.WithModel(data);
