@@ -3,21 +3,21 @@
     using Nancy.ModelBinding;
     using Nancy.Serialization.ProtoBuf.Demo.Model;
 
-    public class MainModule : LegacyNancyModule
+    public class MainModule : NancyModule
     {
         public MainModule()
         {
-            Post["/postProtoBuf"] = parameters =>
+            Post("/postProtoBuf", BuildManagerHostUnloadEventArgs =>
             {
                 User data = this.Bind();
                 return Negotiate.WithModel(data);
-            };
+            });
 
-            Get["/getProtoBuf/{name}/{age}"] = parameters =>
+            Get("/getProtoBuf/{name}/{age}", args =>
             {
-                var data = new User { Name = parameters.name, Age = parameters.age };
+                var data = new User { Name = args.name, Age = args.age };
                 return Negotiate.WithModel(data);
-            };
+            });
         }
     }
 }
