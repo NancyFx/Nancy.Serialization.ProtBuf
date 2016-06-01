@@ -31,6 +31,11 @@
         /// <returns>Model instance</returns>
         public object Deserialize(MediaRange mediaRange, Stream bodyStream, BindingContext context)
         {
+            if (bodyStream.CanSeek)
+            {
+                bodyStream.Position = 0;
+            }
+
             return RuntimeTypeModel.Default.Deserialize(bodyStream, null, context.DestinationType);
         }
 

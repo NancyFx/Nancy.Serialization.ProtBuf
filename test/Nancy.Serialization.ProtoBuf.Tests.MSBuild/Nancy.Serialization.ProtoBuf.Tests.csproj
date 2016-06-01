@@ -78,6 +78,7 @@
     <Compile Include="..\Nancy.Serialization.ProtoBuf.Tests\User.cs">
       <Link>User.cs</Link>
     </Compile>
+    <Compile Include="ProtoBufNancyDeSerializationFixture.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\dependencies\Nancy\src\Nancy.Testing.MSBuild\Nancy.Testing.csproj">
