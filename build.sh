@@ -7,7 +7,7 @@ SHOW_VERSION=false
 
 SCRIPT_NAME="build.cake"
 TOOL_PATH="dependencies/Nancy/tools"
-NUGET_PATH="$TOOL_PATH/nuget/NuGet.exe"
+NUGET_PATH="nuget/NuGet.exe"
 CAKE_VERSION="0.13.0"
 CAKE_PATH="$TOOL_PATH/Cake.$CAKE_VERSION/Cake.exe"
 
@@ -28,22 +28,12 @@ for i in "$@"; do
 done
 
 function installdotnet() {
-  if [ ! $(dotnetinstalled dotnet) ]
-    then
-      echo "Installing dotnet"
-      apt-get install curl
-      curl -sSL https://raw.githubusercontent.com/dotnet/cli/rel/1.0.0/scripts/obtain/dotnet-install.sh | bash /dev/stdin --channel beta --version 1.0.0-preview1-002702 --install-dir .dotnet
-      export PATH=.dotnet:$PATH
-  fi
-}
-
-function dotnetinstalled() {
-  # set to 1 initially
-  local return_=1
-  # set to 0 if not found
-  type $1 >/dev/null 2>&1 || { local return_=0; }
-  # return value
-  echo "$return_"
+  echo "Installing dotnet"
+  wget https://raw.githubusercontent.com/dotnet/cli/rel/1.0.0-preview2/scripts/obtain/dotnet-install.sh
+  sudo bash dotnet-install.sh --version 1.0.0-preview2-003131 --install-dir .dotnet
+  export PATH=.dotnet:$PATH
+  export DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
+  dotnet --info
 }
 
 function installcake() {
