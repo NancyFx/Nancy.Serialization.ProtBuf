@@ -1,21 +1,27 @@
 {
     "dependencies": {
-        "dotnet-test-xunit": "1.0.0-rc3-build10019",
-        "Microsoft.NETCore.Platforms": "1.0.1-rc2-24027",
-        "Nancy": { "target": "project" },
-        "Nancy.Serialization.ProtoBuf": { "target": "project" },
-        "Nancy.Testing": { "target": "project" },
-        "protobuf-net": "2.0.0.668",
-        "xunit": "2.1.0"
+        "dotnet-test-xunit": "2.2.0-preview2-build1029",
+        "Microsoft.NETCore.Platforms": "1.0.1",
+        "Nancy": {"target": "project"},
+        "Nancy.Serialization.ProtoBuf": {"target": "project"},
+        "Nancy.Testing": {"target": "project"},
+        "protobuf-net": "2.1.0",
+        "xunit": "2.2.0-beta2-build3300"
     },
-
     "frameworks": {
         "net452": {
             "frameworkAssemblies": {
-                "System.Runtime": { "type": "build" }
+                "System.Runtime": {"type": "build"}
             }
+        },
+        "netcoreapp1.0": {
+            "dependencies": {
+                "Microsoft.NETCore.App": {
+                    "type": "platform",
+                    "version": "1.0.1"
+                }
+            },
         }
     },
-
     "testRunner": "xunit"
 }
