@@ -60,7 +60,7 @@
 
         private static bool IsWildcardProtobufContentType(MediaRange requestedContentType)
         {
-			if (!requestedContentType.Type.IsWildcard && !string.Equals("application", requestedContentType.Type, StringComparison.InvariantCultureIgnoreCase))
+			if (!requestedContentType.Type.IsWildcard && !string.Equals("application", requestedContentType.Type, StringComparison.OrdinalIgnoreCase))
 			{
 				return false;
 			}
@@ -72,8 +72,8 @@
 
 			var subtypeString = requestedContentType.Subtype.ToString();
 
-			return (subtypeString.StartsWith("vnd", StringComparison.InvariantCultureIgnoreCase)
-                && subtypeString.EndsWith("+x-protobuf", StringComparison.InvariantCultureIgnoreCase));
+			return (subtypeString.StartsWith("vnd", StringComparison.OrdinalIgnoreCase)
+                && subtypeString.EndsWith("+x-protobuf", StringComparison.OrdinalIgnoreCase));
         }
     }
 }
