@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Authors>Andreas Håkansson, Steven Robbins and contributors</Authors>
+    <CodeAnalysisRuleSet>..\..\dependencies\Nancy\Nancy.ruleset</CodeAnalysisRuleSet>
+    <Description>A protocol buffers (de)serializer for the Nancy web framework.</Description>
+    <DisableImplicitFrameworkReferences Condition=" '$(TargetFramework)' == 'net452' ">true</DisableImplicitFrameworkReferences>
+    <PackageIconUrl>http://nancyfx.org/nancy-nuget.png</PackageIconUrl>
+    <PackageLicenseUrl>https://github.com/NancyFx/Nancy/blob/master/license.txt</PackageLicenseUrl>
+    <PackageProjectUrl>http://nancyfx.org</PackageProjectUrl>
+    <PackageTags>Nancy;ProtBuf;ProtocolBuffers</PackageTags>
+    <TargetFramework>net452</TargetFramework>
+    <Version>2.0.0-clinteastwood</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\dependencies\Nancy\src\Nancy\Nancy.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="protobuf-net" Version="2.0.0.668" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+  </ItemGroup>
+
+</Project>
